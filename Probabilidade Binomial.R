@@ -21,3 +21,18 @@ for (x in 0:4)
   cat("Probabilidade de ",x,"sucesso(s) é")
   cat(" de:",i,"\n")
 }
+
+#Prova de 12 questões. Qual a probabilidade de acertar 7. (4 alternativas cada questão)
+
+for (x in 7)
+{
+  p = 0.25 #probabilidade de Sucesso
+  n = 12 #Numero de experimentos
+  # x = total de sucesso esperado do experimento
+  i = (factorial(n)/( factorial(x)*factorial(n-x) ) ) * (p ^ x) * ((1-p) ^(n-x))
+  #i = função da probabilidade binomial
+  cat("Probabilidade de ",x,"sucesso(s) é")
+  cat(" de:",i,"\n")
+}
+
+dbinom(7,12,0.25)
